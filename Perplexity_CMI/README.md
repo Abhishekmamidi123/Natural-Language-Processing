@@ -13,4 +13,4 @@ Files:
 Folders:
 "Chunks" folder contains 10 text files and the data in each file is stored based on their CMI values ("2_3_dataToChunks.py" does this job)
 
-"CMIv2programme" folder contains pre-written files for 
+"CMIv2programme" folder contains pre-written files for calculating CMI values.
