@@ -1,0 +1,15 @@
+1. Download CMUToolkit and extract and put it in Perplexity_CMI folder
+2. Navigate to Perplexity_CMI folder
+3. cat codemix_train.txt | CMUToolkit/bin/./text2wfreq | CMUToolkit/bin/./wfreq2vocab -top 20000 > a.vocab
+4. cat codemix_train.txt | CMUToolkit/bin/./text2idngram -vocab a.vocab | CMUToolkit/bin/./idngram2lm -vocab a.vocab -idngram - -binary a.binlm -spec_num 5000000 15000000
+5. echo "perplexity -text Chunks/0_10.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+6. echo "perplexity -text Chunks/10_20.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+7. echo "perplexity -text Chunks/20_30.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+8. echo "perplexity -text Chunks/30_40.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+9. echo "perplexity -text Chunks/40_50.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+10.echo "perplexity -text Chunks/50_60.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+11.echo "perplexity -text Chunks/60_70.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+12.echo "perplexity -text Chunks/70_80.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+13.echo "perplexity -text Chunks/80_90.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+14.echo "perplexity -text Chunks/90_100.txt" | CMUToolkit/bin/./evallm -binary a.binlm
+15.Note the Perplexity in each step.
